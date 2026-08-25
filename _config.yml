@@ -11,7 +11,7 @@ html:
     <br>
     Last updated: {{LAST_UPDATED}}
     <br>
-    {{GITHUB_URL}}
+    <a href="{{GITHUB_URL}}" target="_blank">
       Find on GitHub
     </a>
 
