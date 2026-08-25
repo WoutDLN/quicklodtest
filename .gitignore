@@ -1,2 +1,7 @@
 # MyST build outputs
 _build
+.venv/
+_build/
+.ipynb_checkpoints/
+__pycache__/
+*.pyc

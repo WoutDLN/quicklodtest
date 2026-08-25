@@ -23,7 +23,13 @@ jobs:
       - run: pip install jupyter-book
       - run: pip install -r requirements.txt
 
-      - run: jupyter-book build
+      - run: pip install -r requirements.txt
+
+      - run: jb build .
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _build/html
 
       - name: Check build output
         run: |

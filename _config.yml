@@ -1,2 +1,7 @@
 title: Visualize Your Linked Open Data
 author: Wout Dillen
+
+exclude_patterns:
+  - .venv/**
+  - _build/**
+  - "**/.ipynb_checkpoints"
