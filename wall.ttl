@@ -32,8 +32,8 @@ wiki:Q151114 mo:Track wiki:Q111830392 .
 
 # We could even provide more information for each track, such as:
 wiki:Q960719 a mo:Track .
-wiki:Q840710 mo:track_number "1" .
-wiki:Q840710 dcterms:title "In the Flesh?" .
+wiki:Q960719 mo:track_number "1" .
+wiki:Q960719 dcterms:title "In the Flesh?" .
 
 # And we could provide more information for each artist as well, such as:
 wiki:Q180861 a foaf:Person .
