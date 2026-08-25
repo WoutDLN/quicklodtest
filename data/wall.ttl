@@ -1,0 +1,42 @@
+# First we declare the prefixes:
+@prefix wiki: <https://www.wikidata.org/wiki/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix dcterms: <http://purl.org/dc/terms/> . 
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+# Then we can start describing the album:
+wiki:Q151114 a mo:Record .
+wiki:Q151114 dcterms:title "The Wall" .
+wiki:Q151114 foaf:maker wiki:Q2306.
+wiki:Q151114 mo:Label wiki:Q1324712 .
+
+# And we can describe the band who recorded the album:
+wiki:Q2306 a mo:MusicGroup .
+wiki:Q2306 foaf:name "Pink Floyd" .
+wiki:Q2306 foaf:member wiki:Q173061 .
+wiki:Q2306 foaf:member wiki:Q192936 .
+wiki:Q2306 foaf:member wiki:Q180861 .
+wiki:Q2306 foaf:member wiki:Q190251 .
+
+# We can also list all the tracks on the album:
+wiki:Q151114 mo:Track wiki:Q960719 .
+wiki:Q151114 mo:Track wiki:Q2734334 .
+wiki:Q151114 mo:Track wiki:Q111829939 .
+wiki:Q151114 mo:Track wiki:Q637965 .
+wiki:Q151114 mo:Track wiki:Q111829840 .
+wiki:Q151114 mo:Track wiki:Q2453999 .
+wiki:Q151114 mo:Track wiki:Q2454009 .
+wiki:Q151114 mo:Track wiki:Q2454034 .
+wiki:Q151114 mo:Track wiki:Q596981 .
+wiki:Q151114 mo:Track wiki:Q111830392 .
+
+# We could even provide more information for each track, such as:
+wiki:Q960719 a mo:Track .
+wiki:Q960719 mo:track_number "1" .
+wiki:Q960719 dcterms:title "In the Flesh?" .
+
+# And we could provide more information for each artist as well, such as:
+wiki:Q180861 a foaf:Person .
+wiki:Q180861 foaf:name "Roger Waters" .
+wiki:Q180861 mo:instrument "vocals" .
+wiki:Q180861 mo:instrument "bass guitar" .
