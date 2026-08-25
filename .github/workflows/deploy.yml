@@ -21,6 +21,7 @@ jobs:
           python-version: "3.11"
 
       - run: pip install jupyter-book
+      - run: pip install -r requirements.txt
 
       - run: jupyter-book build
 
