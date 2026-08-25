@@ -40,5 +40,3 @@ wiki:Q180861 a foaf:Person .
 wiki:Q180861 foaf:name "Roger Waters" .
 wiki:Q180861 mo:instrument "vocals" .
 wiki:Q180861 mo:instrument "bass guitar" .
-
-# PRO TIP: For covers, check out mo:tribute_to
