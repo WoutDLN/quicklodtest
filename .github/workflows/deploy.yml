@@ -22,7 +22,7 @@ jobs:
 
       - run: pip install jupyter-book
 
-      - run: jupyter-book build .
+      - run: jupyter-book build
         continue-on-error: true
 
       - name: Check build output
@@ -31,9 +31,12 @@ jobs:
             ls -la _build/ || echo "No _build directory found"
             find . -name "_build" -type d || echo "No _build directories found"
 
+      - name: Verify build output
+        run: ls -R _build
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: _build/html
+            path: _build/site
 
   deploy:
     needs: build
