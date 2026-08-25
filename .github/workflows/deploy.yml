@@ -20,29 +20,27 @@ jobs:
         with:
           python-version: "3.11"
 
-      - run: pip install jupyter-book
-      - run: pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
 
-      - run: pip install -r requirements.txt
+      - name: Verify install
+        run: |
+          python --version
+          pip list | grep jupyter-book
 
-      - run: jb build .
+      - name: Build book
+        run: |
+          python -m jupyter_book build .
+
+      - name: Verify output
+        run: |
+          find _build/html -name index.html
+          ls -R _build/html | head -100
 
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _build/html
-
-      - name: Check build output
-        run: |
-            echo "Checking for build output..."
-            ls -la _build/ || echo "No _build directory found"
-            find . -name "_build" -type d || echo "No _build directories found"
-
-      - name: Verify build output
-        run: ls -R _build
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-            path: _build/site
 
   deploy:
     needs: build
