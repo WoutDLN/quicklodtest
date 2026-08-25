@@ -39,10 +39,13 @@ jobs:
           which jb
           jb --version
 
-      - name: Add last updated date to config
+      - name: Update footer metadata
         run: |
             LAST_UPDATED=$(git log -1 --format="%cs")
-            sed -i "s|{{LAST_UPDATED}}|$LAST_UPDATED|g" _config.yml
+            GITHUB_URL="https://github.com/${GITHUB_REPOSITORY}"
+
+            sed -i "s|{{LAST_UPDATED}}|${LAST_UPDATED}|g" _config.yml
+            sed -i "s|{{GITHUB_URL}}|${GITHUB_URL}|g" _config.yml
 
       - name: Build Jupyter Book
         run: |
