@@ -5,9 +5,11 @@ copyright: "2026–present"
 html:
   extra_footer: |
     Content licensed under
-    https://creativecommons.org/licenses/by/4.0/
+    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
       CC BY 4.0
     </a>.
+    <br>
+    Last updated: {{LAST_UPDATED}}
 
 exclude_patterns:
   - .venv/**
