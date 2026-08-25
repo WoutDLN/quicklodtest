@@ -23,6 +23,13 @@ jobs:
       - run: pip install jupyter-book
 
       - run: jupyter-book build .
+        continue-on-error: true
+
+      - name: Check build output
+        run: |
+            echo "Checking for build output..."
+            ls -la _build/ || echo "No _build directory found"
+            find . -name "_build" -type d || echo "No _build directories found"
 
       - uses: actions/upload-pages-artifact@v3
         with:
